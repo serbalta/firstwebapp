@@ -30,6 +30,14 @@ services:
       - MONGO
     depends_on:
       - mongo
+  webapp:
+    image: serbalta/firstwebapp:v1.0
+    container_name: webapp
+    restart: always
+    networks:
+      - MONGO
+    ports:
+      - '8080:8080'
 
 networks:
   MONGO:
